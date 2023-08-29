@@ -14,7 +14,7 @@ jobs:
         id: changed-files-specific
         uses: tj-actions/changed-files@v37
         with:
-          all:
+          all: |
             - '**/*'
 
       - name: Run step if test file(s) change
