@@ -13,14 +13,13 @@ jobs:
       - name: Get changed files in the dependency docker folder
         id: changed-files-specific
         uses: tj-actions/changed-files@v37
-
-      - name: Run step if test file(s) change
-        # NOTE: Ensure all outputs are prefixed by the same key used above e.g. `test_(...)` | `doc_(...)` | `src_(...)` when trying to access the `any_changed` output.
-        if: steps.changed-files-yaml.outputs.test_any_changed == 'true'
         with:
           all:
             - '**/*'
 
+      - name: Run step if test file(s) change
+        # NOTE: Ensure all outputs are prefixed by the same key used above e.g. `test_(...)` | `doc_(...)` | `src_(...)` when trying to access the `any_changed` output.
+        if: steps.changed-files-yaml.outputs.test_any_changed == 'true'
         run: |
           echo "One or more test file(s) has changed."
           echo "List all the files that have changed: ${{ steps.changed-files-yaml.outputs.all_all_changed_files }}"
