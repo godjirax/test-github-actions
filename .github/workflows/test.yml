@@ -10,22 +10,44 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Get changed files in the dependency docker folder
-        id: changed-files-specific
-        uses: tj-actions/changed-files@v37
+      # Example 1
+      - name: Get all test, doc and src files that have changed
+        id: changed-files-yaml
+        uses: tj-actions/changed-files@v38
         with:
-          alll: |
-            - '**/*'
+          files_yaml: |
+            doc:
+              - '**/*.md'
+              - docs/**
+              - README.md
+            test:
+              - test/**
+              - '!test/**.md'
+            src:
+              - src/**
+      # - name: Get changed files in the dependency docker folder
+      #   id: changed-files-specific
+      #   uses: tj-actions/changed-files@v37
+      #   with:
+      #     alll: |
+      #       - '**/*'
 
-      - name: Run step if test file(s) change
-        # NOTE: Ensure all outputs are prefixed by the same key used above e.g. `test_(...)` | `doc_(...)` | `src_(...)` when trying to access the `any_changed` output.
-        if: steps.changed-files-specific.outputs.alll_any_changed == 'true'
+      - name: Run step if doc file(s) change
+        if: steps.changed-files-yaml.outputs.doc_any_changed == 'true'
         run: |
-          echo "One or more test file(s) has changed."
-          echo "List all the files that have changed: ${{ steps.changed-files-specific.outputs.all_all_changed_files }}"
+          echo "One or more doc file(s) has changed."
+          echo "List all the files that have changed: ${{ steps.changed-files-yaml.outputs.doc_all_changed_files }}"
+
+
+      # - name: Run step if test file(s) change
+      #   # NOTE: Ensure all outputs are prefixed by the same key used above e.g. `test_(...)` | `doc_(...)` | `src_(...)` when trying to access the `any_changed` output.
+      #   if: steps.changed-files-specific.outputs.alll_any_changed == 'true'
+      #   run: |
+      #     echo "One or more test file(s) has changed."
+      #     echo "List all the files that have changed: ${{ steps.changed-files-specific.outputs.alll_all_changed_files }}"
  
-      - name: List all changed files
-        run: |
-          for file in ${{ steps.changed-files.outputs.alll_changed_files }}; do
-            echo "$file was changed"
-          done
+      # - name: List all changed files
+      #   run: |
+      #     for file in ${{ steps.changed-files.outputs.alll_changed_files }}; do
+      #       echo "$file was changed"
+      #     done
