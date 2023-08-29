@@ -13,9 +13,6 @@ jobs:
       - name: Get changed files in the dependency docker folder
         id: changed-files-specific
         uses: tj-actions/changed-files@v37
-        with:
-          files: |
-            ./**
 
       - name: Run step if test file(s) change
         # NOTE: Ensure all outputs are prefixed by the same key used above e.g. `test_(...)` | `doc_(...)` | `src_(...)` when trying to access the `any_changed` output.
