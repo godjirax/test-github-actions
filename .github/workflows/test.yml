@@ -1,6 +1,12 @@
 name: Jackpot API & dependencies push (env. dev/staging)
 concurrency: jackpot-io/dev
-on:
+  workflow_dispatch:
+    inputs:
+      force_connectors:
+        description: "Force connectors build & push"
+        required: false
+        default: false
+        type: boolean
   push:
     branches:
       - main
