@@ -20,5 +20,5 @@ jobs:
 
       - name: Run step if any file(s) in the docker folder change
         run: |  
-          echo "test"
+          echo "${steps.changed-files-specific.outputs.any_changed}"
 
