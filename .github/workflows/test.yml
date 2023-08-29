@@ -1,0 +1,24 @@
+name: Jackpot API & dependencies push (env. dev/staging)
+concurrency: jackpot-io/dev
+on:
+  push:
+    branches:
+      - main
+jobs:
+  push-docker-dependencies:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get changed files in the dependency docker folder
+        id: changed-files-specific
+        uses: tj-actions/changed-files@v37
+        with:
+          files: |
+            base_sha: ${{ steps.get-base-sha.outputs.base_sha }}
+            ./**
+
+      - name: Run step if any file(s) in the docker folder change
+        run: |
+          echo "${steps.changed-files-specific.outputs[*]}"
+
