@@ -1,7 +1,8 @@
 name: Jackpot API & dependencies push (env. dev/staging)
-concurrency:
-  group: jackpot-io/dev
-  cancel-in-progress: false 
+concurrency: jackpot-io/dev
+# concurrency:
+#   group: jackpot-io/dev
+#   cancel-in-progress: false 
 on:
   push:
     branches:
