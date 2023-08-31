@@ -1,13 +1,13 @@
 name: Jackpot API & dependencies push (env. dev/staging)
 concurrency:
   group: jackpot-io/dev
-  cancel-in-progress: true 
+  cancel-in-progress: false
 on:
   push:
     branches:
       - main
 jobs:
-  test1:
+  test1j:
     runs-on: ubuntu-latest
     steps:
       - name: sleep 10
