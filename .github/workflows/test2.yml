@@ -8,8 +8,8 @@ jobs:
   push-docker-dependencies:
     runs-on: ubuntu-latest
     steps:
-      - name: sleep 10
+      - name: sleep 20
         run: |
           echo "will sleep"
-          sleep 10
+          sleep 20
           echo "sleep finish"
