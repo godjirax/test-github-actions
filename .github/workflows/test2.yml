@@ -7,7 +7,7 @@ on:
     branches:
       - main
 jobs:
-  push-docker-dependencies:
+  test2:
     runs-on: ubuntu-latest
     steps:
       - name: sleep 20
