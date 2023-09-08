@@ -1,7 +1,7 @@
 name: test2
 
 runs:
-  # using: "composite"
+  using: "composite"
   steps :
     - name: coucou
       run: |
