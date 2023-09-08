@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run reusable workflow
-        uses: ./reusable-actions/hello-world/
-        with:
-          who-to-greet: 'Mona the Octocat'
+      # - name: Run reusable workflow
+      #   uses: ./reusable-actions/hello-world/
+      #   with:
+      #     who-to-greet: 'Mona the Octocat'
