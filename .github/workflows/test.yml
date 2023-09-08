@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run reusable workflow
-      uses: ./reusable-actions/hello-world
-      with:
-        who-to-greet: 'Mona the Octocat'      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-      shell: bash
+        uses: ./reusable-actions/hello-world
+        with:
+          who-to-greet: 'Mona the Octocat'      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
