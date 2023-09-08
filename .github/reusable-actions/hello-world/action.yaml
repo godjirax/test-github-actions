@@ -1,3 +1,5 @@
+
+
 name: 'Hello World'
 description: 'Greet someone'
 inputs:
@@ -9,6 +11,10 @@ outputs:
   random-number:
     description: "Random number"
     value: ${{ steps.random-number-generator.outputs.random-number }}
+
+on:
+  workflow_dispatch:
+  
 runs:
   using: "composite"
   steps:
