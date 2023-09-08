@@ -1,26 +1,11 @@
-# name: test2
+name: test2
 
-# runs:
-#   # using: "composite"
-#   steps :
-#     - name: coucou
-#       shell: bash
-#       run: |
-#         echo "coucoucoucou"
-
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+on:
+  workflow_call
+  
 runs:
-  using: 'composite'
+  # using: "composite"
   steps :
-    - name: lololololol
-    run: |
-      echo "coucoucoucou"
+    - name: coucou
+      run: |
+        echo "coucoucoucou"
