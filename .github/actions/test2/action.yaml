@@ -2,8 +2,8 @@ name: test2
 
 jobs:
   test2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: coucou
-        run: |
-          echo "coucoucoucou"
+    runs:
+      steps :
+        - name: coucou
+          run: |
+            echo "coucoucoucou"
