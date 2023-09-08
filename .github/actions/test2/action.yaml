@@ -1,9 +1,8 @@
 name: test2
 
-jobs:
-  test2:
-    runs:
-      steps :
-        - name: coucou
-          run: |
-            echo "coucoucoucou"
+runs:
+  # using: "composite"
+  steps :
+    - name: coucou
+      run: |
+        echo "coucoucoucou"
