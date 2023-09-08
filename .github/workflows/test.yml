@@ -9,7 +9,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Run reusable workflow
-        uses: ./reusable-actions/hello-world/
-        with:
-          who-to-greet: 'Mona the Octocat'
+      - name: Trigger test2
+        run: |
+          curl -X POST https://api.github.com/repos/godjirax/test-github-actions/dispatches \
+          -H 'Accept: application/vnd.github.everest-preview+json' \
+          -u ${{ secrets.PAT_GITHUB_TOKEN }} \
+          --data '{"event_type": "deploy_infra_prod", "client_payload": {"skip_data_migration":true, "skip_init_img":true, "skip_telemetry_img": true, "checkout_branch": "${{ github.ref_name }}", "env": "${{ env.PULUMI_ENV }}" }}'
+
