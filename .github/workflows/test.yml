@@ -1,8 +1,4 @@
-name: Jackpot API & dependencies push (env. dev/staging)
-concurrency: jackpot-io/dev
-# concurrency:
-#   group: jackpot-io/dev
-#   cancel-in-progress: false
+name: test
 on:
   push:
     branches:
@@ -11,8 +7,8 @@ jobs:
   test1j:
     runs-on: ubuntu-latest
     steps:
-      - name: sleep 10
-        run: |
-          echo "will sleep"
-          sleep 10
-          echo "sleep finish"
+
+      - name: test cal test2
+        uses: ./.github/workflows/test2.yml
+        with:
+          toto: tatatatata

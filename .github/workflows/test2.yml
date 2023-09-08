@@ -1,18 +1,9 @@
-name: Jackpot API & dependencies push (env. dev/staging)
-concurrency: jackpot-io/dev
-# concurrency:
-#   group: jackpot-io/dev
-#   cancel-in-progress: false 
-on:
-  push:
-    branches:
-      - main
+name: test2
+
 jobs:
   test2:
     runs-on: ubuntu-latest
     steps:
-      - name: sleep 20
+      - name: coucou
         run: |
-          echo "will sleep"
-          sleep 20
-          echo "sleep finish"
+          echo "coucoucoucou"
