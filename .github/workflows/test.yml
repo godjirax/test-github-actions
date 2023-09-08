@@ -9,6 +9,6 @@ jobs:
     steps:
 
       - name: test cal test2
-        uses: ./.github/actions/test2@master
+        uses: ./.github/actions/test2
         with:
           toto: tatatatata
