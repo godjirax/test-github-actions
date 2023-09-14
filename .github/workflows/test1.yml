@@ -15,6 +15,7 @@ jobs:
           sleep 10
           echo "coucoucoucou"
 
+
       - name: Trigger test2
         run: |
           curl -X POST https://api.github.com/repos/godjirax/test-github-actions/dispatches \
