@@ -1,5 +1,7 @@
-name: aaaa
-concurrency: jackpot-io/sandbox
+name: aaaa1
+concurrency:
+  group: tyty
+  cancel-in-progress: true
 on:
   workflow_dispatch:
   push:
