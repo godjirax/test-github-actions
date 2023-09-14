@@ -1,9 +1,11 @@
-name: test1d
+name: aaaa
 concurrency: test 1
 on:
   push:
     branches:
       - main
+    paths:
+      - ".github/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
