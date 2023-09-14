@@ -1,7 +1,7 @@
 name: aaaa1
 concurrency:
   group: tyty
-  cancel-in-progress: true
+  cancel-in-progress: false
 on:
   workflow_dispatch:
   push:
