@@ -1,6 +1,7 @@
 name: aaaa
 concurrency: test 1
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
