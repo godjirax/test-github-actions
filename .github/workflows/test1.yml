@@ -1,5 +1,5 @@
 name: aaaa
-concurrency: test 1
+concurrency: jackpot-io/sandbox
 on:
   workflow_dispatch:
   push:
