@@ -7,7 +7,7 @@ on:
     branches:
       - mains
     paths:
-      - "api/**"
+      - "api/file1.md"
 jobs:
   test1:
     runs-on: ubuntu-latest
