@@ -1,4 +1,4 @@
-name: demo
+name: code
 concurrency:
   group: dev
   cancel-in-progress: false
