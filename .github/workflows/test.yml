@@ -8,8 +8,8 @@ on:
     branches:
       - main
     paths:
-      - ".github/**"
       - "!folder1/file1"
+      - ".github/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
