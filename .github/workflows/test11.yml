@@ -1,4 +1,4 @@
-name: aaa a
+name: aaaa11
 concurrency:
   group: tyty
   cancel-in-progress: false
@@ -18,7 +18,8 @@ jobs:
       - name: sleep
         run: |
           sleep 10
-          echo "coucoucoucou"
+          echo "coucoucoucou11"
+
 
       - name: Trigger test2
         run: |
