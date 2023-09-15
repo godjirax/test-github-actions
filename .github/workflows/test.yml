@@ -8,6 +8,7 @@ on:
     branches:
       - main
     paths:
+      - "folder2/file2"
       - "!folder1/file1"
 jobs:
   test1:
