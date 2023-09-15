@@ -9,7 +9,7 @@ on:
       - main
     paths:
       - ".github/**"
-      - "!.github/workflows/test.yml"
+      - "!folder1/file1"
 jobs:
   test1:
     runs-on: ubuntu-latest
