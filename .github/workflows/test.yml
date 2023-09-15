@@ -1,4 +1,4 @@
-name: aaa a
+name: test
 concurrency:
   group: tyty
   cancel-in-progress: false
