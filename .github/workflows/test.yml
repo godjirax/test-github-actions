@@ -8,7 +8,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - "folder1/**"
+      - "!folder1/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
