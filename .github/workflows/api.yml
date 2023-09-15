@@ -3,7 +3,6 @@ concurrency:
   group: dev
   cancel-in-progress: false
 on:
-  workflow_dispatch:
   push:
     branches:
       - mains
