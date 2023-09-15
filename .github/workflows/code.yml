@@ -10,21 +10,37 @@ on:
       - "api/**"
       - "demo/**"
 jobs:
-  test1:
+  api:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
-      - name: sleep
+      - name: sleep api
         run: |
-          sleep 5
+          sleep 20
           echo "coucoucoucou11"
 
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
-      - name: Trigger test2
+      - name: sleep demo
         run: |
-          curl -X POST https://api.github.com/repos/godjirax/test-github-actions/dispatches \
-          -H 'Accept: application/vnd.github.everest-preview+json' \
-          -u ${{ secrets.PAT_GITHUB_TOKEN }} \
-          --data '{"event_type": "deploy_infra_dev", "client_payload": {"skip_data_migration":true, "skip_init_img":true, "skip_telemetry_img": true, "checkout_branch": "${{ github.ref_name }}", "env": "${{ env.PULUMI_ENV }}" }}'
+          sleep 20
+          echo "coucoucoucou11"
+
+  redeploy-infra:
+    runs-on: ubuntu-latest
+    needs:
+    [
+      api,
+      demo,
+    ]
+    - name: Trigger test2
+      run: |
+        curl -X POST https://api.github.com/repos/godjirax/test-github-actions/dispatches \
+        -H 'Accept: application/vnd.github.everest-preview+json' \
+        -u ${{ secrets.PAT_GITHUB_TOKEN }} \
+        --data '{"event_type": "deploy_infra_dev", "client_payload": {"skip_data_migration":true, "skip_init_img":true, "skip_telemetry_img": true, "checkout_branch": "${{ github.ref_name }}", "env": "${{ env.PULUMI_ENV }}" }}'
 
