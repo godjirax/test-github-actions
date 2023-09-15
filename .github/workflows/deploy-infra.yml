@@ -1,6 +1,6 @@
 name: deploy infra
 concurrency:
-  group: dev
+  group: dev-deploy
   cancel-in-progress: true
 on:
   repository_dispatch:
