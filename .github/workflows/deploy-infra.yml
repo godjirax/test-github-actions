@@ -1,7 +1,7 @@
-name: test2
+name: deploy infra
 on:
   repository_dispatch:
-    types: [deploy_infra_prod]
+    types: [deploy_infra_dev]
 jobs:
   test1:
     runs-on: ubuntu-latest

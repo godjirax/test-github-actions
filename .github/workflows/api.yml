@@ -1,14 +1,14 @@
-name: testtt
+name: api
 concurrency:
-  group: tyty
+  group: dev
   cancel-in-progress: false
 on:
   workflow_dispatch:
   push:
     branches:
-      - main
-    paths-ignore:
-      - "folder1/**"
+      - mains
+    paths:
+      - ".api/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
@@ -20,10 +20,11 @@ jobs:
           sleep 10
           echo "coucoucoucou"
 
+
       - name: Trigger test2
         run: |
           curl -X POST https://api.github.com/repos/godjirax/test-github-actions/dispatches \
           -H 'Accept: application/vnd.github.everest-preview+json' \
           -u ${{ secrets.PAT_GITHUB_TOKEN }} \
-          --data '{"event_type": "deploy_infra_prod", "client_payload": {"skip_data_migration":true, "skip_init_img":true, "skip_telemetry_img": true, "checkout_branch": "${{ github.ref_name }}", "env": "${{ env.PULUMI_ENV }}" }}'
+          --data '{"event_type": "deploy_infra_dev", "client_payload": {"skip_data_migration":true, "skip_init_img":true, "skip_telemetry_img": true, "checkout_branch": "${{ github.ref_name }}", "env": "${{ env.PULUMI_ENV }}" }}'
 
