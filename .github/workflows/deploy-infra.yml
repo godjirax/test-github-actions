@@ -1,4 +1,7 @@
 name: deploy infra
+concurrency:
+  group: dev
+  cancel-in-progress: true
 on:
   repository_dispatch:
     types: [deploy_infra_dev]
