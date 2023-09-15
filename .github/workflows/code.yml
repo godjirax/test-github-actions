@@ -1,4 +1,4 @@
-name: api
+name: demo
 concurrency:
   group: dev
   cancel-in-progress: false
@@ -8,6 +8,7 @@ on:
       - main
     paths:
       - "api/**"
+      - "demo/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
@@ -17,7 +18,7 @@ jobs:
       - name: sleep
         run: |
           sleep 5
-          echo "coucoucoucou"
+          echo "coucoucoucou11"
 
 
       - name: Trigger test2
