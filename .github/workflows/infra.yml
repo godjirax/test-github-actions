@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "gcp/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
