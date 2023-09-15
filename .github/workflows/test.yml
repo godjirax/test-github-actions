@@ -9,7 +9,6 @@ on:
       - main
     paths:
       - "folder2/file2"
-      - "!folder1/file1"
 jobs:
   test1:
     runs-on: ubuntu-latest
