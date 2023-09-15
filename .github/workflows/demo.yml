@@ -8,7 +8,7 @@ on:
     branches:
       - mains
     paths:
-      - ".github/**"
+      - "demo/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
