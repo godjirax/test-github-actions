@@ -8,7 +8,7 @@ on:
     branches:
       - mains
     paths:
-      - ".api/**"
+      - ".api/*"
 jobs:
   test1:
     runs-on: ubuntu-latest
