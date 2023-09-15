@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - mains
-    paths:
-      - "api/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
