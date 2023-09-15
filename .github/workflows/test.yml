@@ -9,6 +9,8 @@ on:
       - main
     paths:
       - ".github/**"
+    paths-ignore:
+      - "**"
 jobs:
   test1:
     runs-on: ubuntu-latest
