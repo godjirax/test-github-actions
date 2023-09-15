@@ -4,6 +4,8 @@ concurrency:
   cancel-in-progress: false
 on:
   push:
+    branches:
+      - main
     paths-ignore:
       - "**"
 jobs:

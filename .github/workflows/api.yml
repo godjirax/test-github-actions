@@ -5,7 +5,9 @@ concurrency:
 on:
   push:
     branches:
-      - mains
+      - main
+    paths:
+      - "api/**"
 jobs:
   test1:
     runs-on: ubuntu-latest
